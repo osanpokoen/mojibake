@@ -10,9 +10,13 @@ import (
 	"strings"
 )
 
-func main() {
-	var isDecode bool
+var isDecode bool
+
+func init() {
 	flag.BoolVar(&isDecode, "d", false, "Execution Decode function when this flag is true")
+}
+
+func main() {
 	flag.Parse()
 
 	body, err := ioutil.ReadAll(os.Stdin)
